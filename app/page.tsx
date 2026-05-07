@@ -34,12 +34,14 @@ export default async function HomePage() {
           <Image
             src="https://imagestravelblog.s3.us-east-2.amazonaws.com/logo+png-01.png"
             alt="Dos Outdoors"
-            width={320}
-            height={160}
-            className="mx-auto drop-shadow-lg mb-2"
+            width={500}
+            height={250}
+            className="mx-auto brightness-0 invert drop-shadow-2xl mb-4 w-48 sm:w-64 md:w-80 lg:w-96 h-auto"
             priority
           />
-          <p className="text-lg md:text-xl text-white/90 drop-shadow">Two on the Go</p>
+          <p className="text-xl sm:text-2xl md:text-3xl text-white/90 font-light tracking-widest drop-shadow-lg uppercase">
+            Two on the Go
+          </p>
         </div>
       </section>
 
