@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Charmonman, Open_Sans } from 'next/font/google'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import NavBar from '@/components/NavBar'
 import Footer from '@/components/Footer'
 import './globals.css'
@@ -40,6 +41,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main>{children}</main>
         <Footer />
       </body>
+      {process.env.NEXT_PUBLIC_GA_ID && (
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+      )}
     </html>
   )
 }

@@ -16,28 +16,53 @@ Travel blog for [dosoutdoors.com](https://dosoutdoors.com) — Two on the Go.
 
 ## Local Development
 
-1. Clone the repo
+### Setup
+
+1. Clone the repo:
+   ```bash
+   git clone git@github.com:ccrodrig-dev/dosoutdoors-v2.git
+   cd dosoutdoors-v2
+   ```
+
 2. Install dependencies:
    ```bash
    npm install
    ```
-3. Create `.env.local` from the example:
+
+3. Create your local environment file:
    ```bash
    cp .env.local.example .env.local
    ```
-4. Fill in your values in `.env.local`:
+
+4. Fill in `.env.local` with the real values:
    ```
    NEXT_PUBLIC_SANITY_PROJECT_ID=s9ktrlr6
    NEXT_PUBLIC_SANITY_DATASET=production
-   SANITY_WRITE_TOKEN=your_write_token_here   # only needed for migration scripts
+   NEXT_PUBLIC_GA_ID=G-G5WN7R80CH          # Google Analytics — omit to disable locally
+   SANITY_WRITE_TOKEN=...                   # only needed for migration scripts
    ```
-5. Run the dev server:
+
+   The Sanity project ID and dataset are safe to commit (they're public-facing). The write token is a secret — never commit it.
+
+5. Start the dev server:
    ```bash
    npm run dev
    ```
+
 6. Open [http://localhost:3000](http://localhost:3000)
 
-The Sanity Studio editor runs at [http://localhost:3000/studio](http://localhost:3000/studio).
+The embedded Sanity Studio editor is at [http://localhost:3000/studio](http://localhost:3000/studio). You can create and edit articles there during local development.
+
+### Environment Variables
+
+| Variable | Required | Description |
+|----------|----------|-------------|
+| `NEXT_PUBLIC_SANITY_PROJECT_ID` | Yes | Sanity project ID (from sanity.io/manage) |
+| `NEXT_PUBLIC_SANITY_DATASET` | Yes | Sanity dataset name (e.g. `production`) |
+| `NEXT_PUBLIC_GA_ID` | No | Google Analytics 4 measurement ID |
+| `SANITY_WRITE_TOKEN` | Scripts only | Sanity API token with write access |
+
+`NEXT_PUBLIC_GA_ID` must also be set in Vercel for analytics to work in production (Vercel Dashboard → Project → Settings → Environment Variables).
 
 ## Deployment
 
