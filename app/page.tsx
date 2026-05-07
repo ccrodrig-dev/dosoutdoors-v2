@@ -31,9 +31,14 @@ export default async function HomePage() {
         />
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative text-center text-white px-4">
-          <h1 className="font-['var(--font-charmonman)'] text-6xl md:text-7xl font-bold drop-shadow-lg mb-4">
-            Dos Outdoors
-          </h1>
+          <Image
+            src="https://imagestravelblog.s3.us-east-2.amazonaws.com/logo+png-01.png"
+            alt="Dos Outdoors"
+            width={320}
+            height={160}
+            className="mx-auto drop-shadow-lg mb-2"
+            priority
+          />
           <p className="text-lg md:text-xl text-white/90 drop-shadow">Two on the Go</p>
         </div>
       </section>
